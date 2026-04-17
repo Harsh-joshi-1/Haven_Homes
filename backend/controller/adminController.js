@@ -9,6 +9,7 @@ import { logAdminActivity } from "../utils/activityLogger.js";
 import createCsvWriter from 'csv-writer';
 import fs from 'fs';
 import mongoose from 'mongoose';
+import { deleteImagesFromImageKit } from '../utils/imageKitCleanup.js';
 
 const formatRecentProperties = (properties) => {
   return properties.map((property) => ({
@@ -684,6 +685,14 @@ export const deleteUser = async (req, res) => {
       return res.status(404).json({ success: false, message: "User not found" });
     }
 
+    // Get all user's properties to delete images
+    const userProperties = await Property.find({ postedBy: userId });
+    for (const prop of userProperties) {
+      if (prop.image && prop.image.length > 0) {
+        await deleteImagesFromImageKit(prop.image);
+      }
+    }
+
     // Delete all user's properties
     await Property.deleteMany({ postedBy: userId });
 
@@ -1098,6 +1107,14 @@ export const bulkDeleteProperties = async (req, res) => {
         success: false,
         message: "Cannot delete more than 100 properties at once"
       });
+    }
+
+    // Get properties to delete images
+    const propertiesToDelete = await Property.find({ _id: { $in: propertyIds } });
+    for (const prop of propertiesToDelete) {
+      if (prop.image && prop.image.length > 0) {
+        await deleteImagesFromImageKit(prop.image);
+      }
     }
 
     // Bulk delete properties

@@ -41,7 +41,7 @@ const CuratedListingsSection: React.FC = () => {
       try {
         const { data } = await propertiesAPI.getAll();
         if (data.success && data.property) {
-          setProperties(data.property.slice(0, 5));
+          setProperties(data.property.slice(0, 4));
         }
       } catch (err) {
         console.error('Failed to fetch featured properties:', err);

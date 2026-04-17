@@ -1,6 +1,7 @@
 import fs from "fs";
 import imagekit from "../config/imagekit.js";
 import Property from "../models/propertyModel.js";
+import { deleteImagesFromImageKit } from "../utils/imageKitCleanup.js";
 
 const addproperty = async (req, res) => {
     try {
@@ -104,10 +105,17 @@ const listproperty = async (req, res) => {
 
 const removeproperty = async (req, res) => {
     try {
-        const property = await Property.findByIdAndDelete(req.body.id);
+        const property = await Property.findById(req.body.id);
         if (!property) {
             return res.status(404).json({ message: "Property not found", success: false });
         }
+
+        // Delete images from ImageKit
+        if (property.image && property.image.length > 0) {
+            await deleteImagesFromImageKit(property.image);
+        }
+
+        await Property.findByIdAndDelete(req.body.id);
         return res.json({ message: "Property removed successfully", success: true });
     } catch (error) {
         console.log("Error removing product: ", error);
@@ -182,7 +190,18 @@ const updateproperty = async (req, res) => {
         let finalImages = [];
         if (req.body.existingImages) {
             const existingImages = Array.isArray(req.body.existingImages) ? req.body.existingImages : [req.body.existingImages];
+            
+            // Check for removed images to cleanup ImageKit
+            const removedImages = property.image.filter(img => !existingImages.includes(img));
+            if (removedImages.length > 0) {
+                await deleteImagesFromImageKit(removedImages);
+            }
+            
             finalImages = [...existingImages];
+        } else if (images.length > 0 && property.image.length > 0) {
+            // If new images are uploaded and no existing images provided, 
+            // assume all old images are being replaced.
+            await deleteImagesFromImageKit(property.image);
         }
         finalImages = [...finalImages, ...newImageUrls];
 

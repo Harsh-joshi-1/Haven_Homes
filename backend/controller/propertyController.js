@@ -7,6 +7,7 @@ import Property from '../models/propertyModel.js';
 import SearchCache from '../models/searchCacheModel.js';
 import { coalesce, getInFlightCount } from '../utils/requestCoalescer.js';
 import logger from '../utils/logger.js';
+import { deleteImagesFromImageKit } from '../utils/imageKitCleanup.js';
 
 // ── MongoDB-based cache (10-minute TTL via TTL index) ────────────────────────
 // Replaces in-memory cache - works across all server instances
@@ -612,6 +613,10 @@ export const updateUserListing = async (req, res) => {
         let imageUrls = property.image;
         const files = req.files || [];
         if (files.length > 0) {
+            // Delete old images before replacing
+            if (property.image && property.image.length > 0) {
+                await deleteImagesFromImageKit(property.image);
+            }
             imageUrls = await uploadImages(files);
         }
 
@@ -655,6 +660,11 @@ export const deleteUserListing = async (req, res) => {
 
         if (!property.postedBy || property.postedBy.toString() !== req.user._id.toString()) {
             return res.status(403).json({ success: false, message: 'Not authorised to delete this listing' });
+        }
+
+        // Delete images from ImageKit
+        if (property.image && property.image.length > 0) {
+            await deleteImagesFromImageKit(property.image);
         }
 
         await Property.findByIdAndDelete(req.params.id);
