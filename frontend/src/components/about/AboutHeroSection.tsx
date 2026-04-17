@@ -1,0 +1,41 @@
+import React from 'react';
+import mainAboutImage from '../../images/Main about image.jpg';
+
+const AboutHeroSection: React.FC = () => {
+  return (
+    <section className="relative bg-[#111827] h-[480px] overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 opacity-40"
+        style={{ 
+          backgroundImage: `url('${mainAboutImage}')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }} 
+      />
+      
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#111827]/60 to-[#111827]/90" />
+
+      {/* Content */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="text-center max-w-[700px] px-8">
+          <p className="font-red-hat text-xs uppercase tracking-[3px] text-white/60 mb-6 font-bold">About Haven Homes</p>
+          <h1 className="font-fraunces text-[48px] sm:text-[56px] leading-tight text-white font-bold mb-6">
+            Redefining Real Estate with<br />
+            <span className="font-light italic text-white/90">Intelligence & Elegance</span>
+          </h1>
+          
+          {/* Divider */}
+          <div className="w-16 h-[2px] bg-white/30 mx-auto mb-8" />
+          
+          <p className="font-red-hat text-lg text-white/70 font-medium leading-relaxed">
+            Where data-driven precision meets the art of living.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutHeroSection;
