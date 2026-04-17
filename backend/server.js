@@ -1,5 +1,11 @@
-import express from 'express';
+import express from 'express'; // Triggering restart
 import dotenv from 'dotenv';
+
+// Load environment variables immediately
+dotenv.config();
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config({ path: './.env.local' });
+}
 import cors from 'cors';
 import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
@@ -16,14 +22,11 @@ import appointmentRouter from './routes/appointmentRoutes.js';
 import adminRouter from './routes/adminRoutes.js';
 import propertyRoutes from './routes/propertyRoutes.js';
 import healthRouter from './routes/healthRoutes.js';
+import youtubeRouter from './routes/youtubeRoutes.js';
 import getStatusPage from './serverweb.js';
 import { startExpireListingsJob } from './utils/expireListings.js';
 import { startAutoUnsuspendJob } from './utils/autoUnsuspend.js';
 
-if (process.env.NODE_ENV !== 'production') {
-  dotenv.config({ path: './.env.local' });
-}
-dotenv.config(); // .env fallback / Render uses process-level env vars
 
 const app = express();
 
@@ -182,6 +185,7 @@ app.use('/api/users', userrouter);
 app.use('/api/news', newsrouter);
 app.use('/api/appointments', appointmentRouter);
 app.use('/api/admin', adminRouter);
+app.use('/api/youtube', youtubeRouter);
 app.use('/api', propertyRoutes);
 
 

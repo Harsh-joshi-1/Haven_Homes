@@ -7,6 +7,7 @@ import HeroSection from '../components/home/HeroSection';
 import StatsSection from '../components/home/StatsSection';
 import CuratedListingsSection from '../components/home/CuratedListingsSection';
 import FaqSection from '../components/home/FaqSection';
+import YouTubeMarquee from '../components/home/YouTubeMarquee';
 
 const HomePage: React.FC = () => {
   const location = useLocation();
@@ -42,8 +43,11 @@ const HomePage: React.FC = () => {
       <CuratedListingsSection />
 
       {/* FAQ Section */}
-      <StatsSection />
+
       <FaqSection />
+
+      {/* YouTube Marquee */}
+      <YouTubeMarquee />
 
       {/* Footer */}
       <Footer />

@@ -177,5 +177,10 @@ export const apiKeyStorage = {
   },
 };
 
+// YouTube Latest Videos
+export const youtubeAPI = {
+  getLatestVideos: () => apiClient.get('/youtube/latest'),
+};
+
 export default apiClient;
 
