@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { APP_CONSTANTS, backendurl } from '../config/constants';
+import { APP_CONSTANTS } from '../config/constants';
 
 const apiClient = axios.create({
-  baseURL: backendurl,
+  baseURL: import.meta.env.VITE_API_BASE_URL,
 });
 
 apiClient.interceptors.request.use(
