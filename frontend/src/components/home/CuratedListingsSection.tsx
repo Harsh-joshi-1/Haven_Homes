@@ -166,8 +166,8 @@ const CuratedListingsSection: React.FC = () => {
         {/* Left Side Images */}
         <div className="lg:w-1/2 relative bg-gray-100 min-h-[400px]">
           <div className="absolute inset-0">
-            <img src="/src/images/Hero Section.jpg" className="w-full h-1/2 object-cover opacity-80" alt="House top" />
-            <img src="/src/images/Happy Homeowners_1.jpg" className="w-full h-1/2 object-cover" alt="House bottom" />
+            <img src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_webp,q_80/v1776423229/Hero_Section.jpg" className="w-full h-1/2 object-cover opacity-80" alt="House top" />
+            <img src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_webp,q_80/v1776423229/Happy_Homeowners_1.jpg" className="w-full h-1/2 object-cover" alt="House bottom" />
           </div>
           <div className="absolute bottom-6 right-6 flex gap-4">
             <button className="w-10 h-10 rounded-full border border-white flex items-center justify-center text-white backdrop-blur-sm bg-black/20 hover:bg-black/40">
