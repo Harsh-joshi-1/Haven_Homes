@@ -29,6 +29,9 @@ statsSchema.index({ endpoint: 1, timestamp: -1 });
 statsSchema.index({ method: 1 });
 statsSchema.index({ statusCode: 1 });
 
+// TTL index: delete records older than 30 days
+statsSchema.index({ createdAt: 1 }, { expireAfterSeconds: 30 * 24 * 60 * 60 });
+
 const Stats = mongoose.model('Stats', statsSchema);
 
 export default Stats;

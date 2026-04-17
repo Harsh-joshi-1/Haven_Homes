@@ -6,6 +6,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import PageTransition from './components/common/PageTransition';
 import ScrollToTop from './components/common/ScrollToTop';
 import StructuredData from './components/common/StructuredData';
+import WhatsAppButton from './components/common/WhatsAppButton';
 
 // Lazy load pages for better performance (Code Splitting)
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -68,6 +69,7 @@ export default function App() {
         <Suspense fallback={<PageLoader />}>
           <AnimatedRoutes />
         </Suspense>
+        <WhatsAppButton />
         <Toaster position="top-center" richColors />
       </AuthProvider>
     </BrowserRouter>
