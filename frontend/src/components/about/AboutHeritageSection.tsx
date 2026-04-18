@@ -40,8 +40,8 @@ const AboutHeritageSection: React.FC = () => {
 
             {/* Description */}
             <div className="space-y-5 mb-10">
-              <p className="font-red-hat text-base leading-7 text-[#5A5856] font-medium">
-                Haven Homes Punjab, led by Gaurav Sharma (Director), is a trusted real estate service focused on helping clients buy, sell, and invest in property with confidence. With strong local market knowledge and a transparent approach, we ensure smooth and reliable property deals.
+              <p className="font-inter text-base leading-7 text-[#5A5856] font-medium">
+                Haven Homes Punjab, led by Chartered Financial Analyst Gaurav Sharma (Director), is a distinguished real estate service dedicated to helping clients buy and invest in property with complete confidence. Combining deep financial expertise with strong local market insight, we deliver a refined, transparent, and seamless property experience. Our approach ensures every transaction is not only smooth and reliable, but also strategically aligned with long-term value and investment growth.
               </p>
             </div>
 
