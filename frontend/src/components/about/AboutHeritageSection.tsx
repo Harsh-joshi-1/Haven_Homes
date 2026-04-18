@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import heritageImage from '../../images/Heritage section.jpg';
+import SocialMarquee from '../home/SocialMarquee';
 
 const AboutHeritageSection: React.FC = () => {
   return (
@@ -10,9 +10,9 @@ const AboutHeritageSection: React.FC = () => {
           {/* Left - Image */}
           <div className="relative">
             <div className="border border-[#E5E7EB] rounded-2xl p-3">
-              <div className="relative h-[600px] lg:h-[700px] rounded-xl overflow-hidden">
+              <div className="relative h-[400px] sm:h-[600px] lg:h-[700px] rounded-xl overflow-hidden">
                 <img
-                  src={heritageImage}
+                  src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_webp,q_auto/v1776496833/about_us1.jpg"
                   alt="Architectural detail"
                   className="w-full h-full object-cover"
                 />
@@ -41,9 +41,7 @@ const AboutHeritageSection: React.FC = () => {
             {/* Description */}
             <div className="space-y-5 mb-10">
               <p className="font-red-hat text-base leading-7 text-[#5A5856] font-medium">
-                Founded by architects and data scientists, Haven Homes emerged from a
-                simple observation: the search for a home had become a transaction, losing
-                the emotional resonance of finding one's sanctuary.
+                Haven Homes Punjab, led by Gaurav Sharma (Director), is a trusted real estate service focused on helping clients buy, sell, and invest in property with confidence. With strong local market knowledge and a transparent approach, we ensure smooth and reliable property deals.
               </p>
             </div>
 
@@ -54,17 +52,9 @@ const AboutHeritageSection: React.FC = () => {
                 not exhausting."
               </p>
             </blockquote>
-
+            <SocialMarquee />
             {/* Link */}
-            <a
-              href="#team"
-              className="inline-flex items-center gap-2 border-b border-[#111827] pb-1 group hover:border-[#6B7280] transition-colors"
-            >
-              <span className="font-inter text-sm font-medium text-[#111827] group-hover:text-[#6B7280] transition-colors">
-                Meet the Architects
-              </span>
-              <ArrowRight className="w-4 h-4 text-[#111827] group-hover:text-[#6B7280] transition-colors" />
-            </a>
+
           </div>
         </div>
       </div>
