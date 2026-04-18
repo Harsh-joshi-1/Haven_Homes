@@ -85,8 +85,8 @@ const HeroSection: React.FC = () => {
 
           {/* Quick Suggestions */}
           <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
-            <p className="font-red-hat text-[10px] text-white/50 uppercase tracking-widest mr-2">Trending:</p>
-            {['Mumbai', 'Ahmedabad', 'Pune', 'Villa'].map(item => (
+            <p className="font-red-hat text-[10px] text-white/50 uppercase tracking-widest mr-2">Suggestion:</p>
+            {['Jalandhar', 'Ludhiana', 'Plot', 'Villa'].map(item => (
               <button
                 key={item}
                 onClick={() => { setSearchTerm(item); }}
