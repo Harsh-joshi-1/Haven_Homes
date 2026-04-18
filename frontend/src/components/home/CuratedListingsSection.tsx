@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { propertiesAPI } from '../../services/api';
 import { formatPrice } from '../../utils/formatPrice';
 import PropertyCard from '../properties/PropertyCard';
-import SocialMarquee from './SocialMarquee';
+
 
 interface Property {
   _id: string;

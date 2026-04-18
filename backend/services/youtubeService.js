@@ -41,7 +41,7 @@ export const fetchLatestVideos = async () => {
       params: {
         part: 'snippet,contentDetails',
         playlistId: uploadsPlaylistId,
-        maxResults: 4,
+        maxResults: 20,
         key: apiKey
       }
     });

@@ -6,7 +6,7 @@ import AboutHeroSection from '../components/about/AboutHeroSection';
 import AboutHeritageSection from '../components/about/AboutHeritageSection';
 import AboutCTASection from '../components/about/AboutCTASection';
 import WhyChooseSection from '../components/about/WhyChooseSection';
-import SocialMarquee from '@/components/home/SocialMarquee';
+
 
 const AboutUsPage: React.FC = () => {
   useSEO({
@@ -33,7 +33,7 @@ const AboutUsPage: React.FC = () => {
 
       {/* Why Choose Us Section */}
       <WhyChooseSection />
-      <SocialMarquee />
+
       {/* CTA Section */}
       <AboutCTASection />
 

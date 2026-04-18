@@ -5,10 +5,10 @@ import Footer from '../components/common/Footer';
 import { useSEO } from '../hooks/useSEO';
 import HeroSection from '../components/home/HeroSection';
 import CuratedListingsSection from '../components/home/CuratedListingsSection';
-import FaqSection from '../components/home/FaqSection';
-import YouTubeMarquee from '../components/home/YouTubeMarquee';
-import SocialMarquee from '../components/home/SocialMarquee';
+import YouTubeGrid from '../components/home/YouTubeGrid';
+import WhyChooseSection from '../components/about/WhyChooseSection';
 import ConsultationSection from '../components/home/ConsultationSection';
+import FaqSection from '../components/home/FaqSection';
 
 const HomePage: React.FC = () => {
   const location = useLocation();
@@ -37,23 +37,15 @@ const HomePage: React.FC = () => {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Social Marquee after Hero */}
-      <SocialMarquee className="my-1" />
-
       {/* Stats Section */}
 
       {/* Curated Listings Section */}
       <CuratedListingsSection />
-      <SocialMarquee className="my-0.5" />
 
       <ConsultationSection />
-      <SocialMarquee className="my-0.5" />
-      {/* FAQ Section */}
-      <YouTubeMarquee />
+      <WhyChooseSection />
+      <YouTubeGrid />
       <FaqSection />
-
-      {/* Social Marquee above Footer */}
-      <SocialMarquee className="mt-0.5" />
 
       {/* Footer */}
       <Footer />

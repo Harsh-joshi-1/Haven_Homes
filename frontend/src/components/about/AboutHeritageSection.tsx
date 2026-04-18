@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import SocialMarquee from '../home/SocialMarquee';
+
 
 const AboutHeritageSection: React.FC = () => {
   return (
@@ -52,7 +52,7 @@ const AboutHeritageSection: React.FC = () => {
                 not exhausting."
               </p>
             </blockquote>
-            <SocialMarquee />
+
             {/* Link */}
 
           </div>
