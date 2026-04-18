@@ -71,7 +71,7 @@ const ContactPage: React.FC = () => {
                     </p>
                   </div>
                   <a
-                    href="#"
+                    href="/#consultation-section"
                     className="inline-flex items-center gap-2 font-red-hat font-bold text-[#FF9800] hover:text-[#F57C00] transition-colors group/link"
                   >
                     <span>Book Now</span>

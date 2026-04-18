@@ -94,17 +94,10 @@ const ContactInfoCards: React.FC = () => {
             </h3>
             <div className="space-y-2 font-red-hat font-medium text-sm text-[#5A5856]">
               <div className="flex justify-between items-center">
-                <span>Mon - Fri:</span>
-                <span className="font-bold text-[#1C1B1A]">09:00 - 18:00</span>
+                <span>Available:</span>
+                <span className="font-bold text-[#1C1B1A]">24/7 Service</span>
               </div>
-              <div className="flex justify-between items-center">
-                <span>Saturday:</span>
-                <span className="font-bold text-[#1C1B1A]">10:00 - 16:00</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span>Sunday:</span>
-                <span className="font-bold text-[#1C1B1A]">Closed</span>
-              </div>
+              <p className="text-xs text-gray-400 mt-2">Always here for your property needs</p>
             </div>
           </div>
         </div>

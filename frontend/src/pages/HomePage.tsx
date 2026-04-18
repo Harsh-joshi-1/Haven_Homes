@@ -47,6 +47,7 @@ const HomePage: React.FC = () => {
       <SocialMarquee className="my-0.5" />
 
       <ConsultationSection />
+      <SocialMarquee className="my-0.5" />
       {/* FAQ Section */}
       <YouTubeMarquee />
       <FaqSection />
