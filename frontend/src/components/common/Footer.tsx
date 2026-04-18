@@ -40,11 +40,15 @@ const Footer: React.FC = () => {
               Curating luxury living spaces and premium investment opportunities across India's most prestigious locations.
             </p>
             <div className="flex items-center gap-5">
-              {[Instagram, Youtube, Twitter, Facebook].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 hover:border-white hover:bg-white hover:text-[#1C1B1A] transition-all duration-300 group">
-                  <Icon className="w-5 h-5" />
-                </a>
-              ))}
+              <a href="https://www.instagram.com/havenhomespunjab?igsh=MTVsM3Ixd3JnM21hcg==" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 hover:border-white hover:bg-white hover:text-[#1C1B1A] transition-all duration-300">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="https://youtube.com/@haven_homes_punjab?si=2LAcMfZd2jWVkDNN" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 hover:border-white hover:bg-white hover:text-[#1C1B1A] transition-all duration-300">
+                <Youtube className="w-5 h-5" />
+              </a>
+              <a href="https://www.facebook.com/share/1F8iGtz8gA/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 hover:border-white hover:bg-white hover:text-[#1C1B1A] transition-all duration-300">
+                <Facebook className="w-5 h-5" />
+              </a>
             </div>
           </div>
 

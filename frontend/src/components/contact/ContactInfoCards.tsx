@@ -49,13 +49,22 @@ const ContactInfoCards: React.FC = () => {
             </h3>
             <div className="space-y-2">
               <a 
-                href="tel:+919876543210" 
+                href="tel:9501490002" 
+                className="flex items-center gap-2 font-red-hat font-medium text-sm text-[#5A5856] hover:text-[#D47556] transition-colors"
+              >
+                <span className="material-icons text-base">
+                  call
+                </span>
+                <span>95014-90002</span>
+              </a>
+              <a 
+                href="tel:9872311311" 
                 className="flex items-center gap-2 font-red-hat font-medium text-sm text-[#5A5856] hover:text-[#D4755B] transition-colors"
               >
                 <span className="material-icons text-base">
                   call
                 </span>
-                <span>+91 98765 43210</span>
+                <span>9872 311311</span>
               </a>
               <a 
                 href="mailto:hello@Haven Homes.com" 

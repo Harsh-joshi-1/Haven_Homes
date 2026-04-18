@@ -43,7 +43,7 @@ const ContactPage: React.FC = () => {
                     </p>
                   </div>
                   <a
-                    href="https://wa.me/919876543210"
+                    href="https://wa.me/919501490002"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 font-red-hat font-bold text-[#4CAF50] hover:text-[#388E3C] transition-colors group/link"

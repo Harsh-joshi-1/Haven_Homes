@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const WhatsAppButton: React.FC = () => {
-  const whatsappUrl = "https://wa.me/919876543210";
+  const whatsappUrl = "https://wa.me/919501490002";
   const iconUrl = "https://res.cloudinary.com/dp4xt0bve/image/upload/f_webp,q_auto/v1776427639/WhatsApp_icon.png";
 
   return (
