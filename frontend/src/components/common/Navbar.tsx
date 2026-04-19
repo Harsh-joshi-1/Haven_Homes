@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${scrolled ? 'bg-[#1C1B1A]/95 backdrop-blur-md shadow-lg h-16' : 'bg-[#1C1B1A] h-20'
+    <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${scrolled ? 'bg-[#1C1B1A]/95 backdrop-blur-md shadow-lg h-[65px]' : 'bg-[#1C1B1A] h-[81px]'
       }`}>
       <div className="max-w-[1440px] mx-auto h-full px-4 sm:px-8 flex items-center justify-between relative">
         {/* Brand Logo */}
@@ -37,9 +37,9 @@ const Navbar: React.FC = () => {
           className="flex items-center gap-3 h-full py-0 lg:static absolute left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0"
         >
           <img
-            src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_webp,q_auto,e_tint:100:D4AF37/v1776492125/logo-Photoroom.png"
+            src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_webp,q_auto/v1776567470/Gemini_Generated_Image_2kiid52kiid52kii-Photoroom.png"
             alt="Haven Homes Logo"
-            className="h-full w-auto object-contain"
+            className="h-full w-auto object-contain py-1"
           />
           <span className="font-fraunces font-bold text-xl sm:text-2xl text-[#C5A059] tracking-tight hidden lg:block">Haven Homes</span>
         </Link>
@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
           ))}
           <Link
             to="/properties"
-            className="bg-white text-[#1C1B1A] font-red-hat text-xs font-bold uppercase tracking-widest px-8 py-3.5 rounded-xl hover:bg-[#C5A059] hover:text-[#C5A059] transition-all duration-300 shadow-md"
+            className="bg-white text-[#1C1B1A] font-red-hat text-xs font-bold uppercase tracking-widest px-8 py-3.5 rounded-xl hover:bg-[#C5A059] hover:text-white transition-all duration-300 shadow-md"
           >
             Explore Listings
           </Link>

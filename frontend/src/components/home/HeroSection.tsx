@@ -48,7 +48,7 @@ const HeroSection: React.FC = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="font-fraunces font-bold text-[18vw] sm:text-[12vw] lg:text-[11vw] text-white uppercase leading-[0.85] tracking-tighter drop-shadow-2xl"
+            className="font-fraunces font-bold text-[18vw] sm:text-[12vw] lg:text-[11vw] text-[#fad643] uppercase leading-[0.85] tracking-tighter drop-shadow-2xl"
           >
             HAVEN <br className="sm:hidden" /> HOMES
           </motion.h1>
@@ -77,7 +77,7 @@ const HeroSection: React.FC = () => {
             </div>
             <button
               type="submit"
-              className="bg-white text-[#1C1B1A] font-red-hat text-xs sm:text-sm font-bold uppercase tracking-widest px-6 sm:px-10 py-4 sm:py-5 rounded-xl sm:rounded-[1.5rem] hover:bg-[#C5A059] hover:text-white transition-all duration-300 shadow-lg active:scale-95"
+              className="bg-[#F5DF68] sm:bg-white text-[#1C1B1A] font-red-hat text-xs sm:text-sm font-bold uppercase tracking-widest px-6 sm:px-10 py-4 sm:py-5 rounded-xl sm:rounded-[1.5rem] hover:bg-[#C5A059] hover:text-white transition-all duration-300 shadow-lg active:scale-95"
             >
               Search
             </button>

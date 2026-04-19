@@ -93,13 +93,13 @@ const PropertyDetailsPage: React.FC = () => {
         <div className="flex items-center justify-center py-32 px-4 shadow-sm">
           <div className="text-center max-w-md bg-white p-8 rounded-3xl border border-[#E6E0DA]">
             <div className="w-16 h-16 bg-[#F8F6F6] rounded-full flex items-center justify-center mx-auto mb-6">
-               <span className="material-icons text-3xl text-[#C5A059]">error_outline</span>
+               <span className="material-icons text-3xl text-[var(--gold-400)]">error_outline</span>
             </div>
-            <h2 className="font-fraunces text-2xl text-[#1C1B1A] mb-2">{error || 'Property Not Found'}</h2>
-            <p className="font-red-hat text-[#5A5856] mb-8">This property listing may have been removed or is currently unavailable.</p>
+            <h2 className="font-fraunces text-2xl text-[var(--charcoal-ink)] mb-2">{error || 'Property Not Found'}</h2>
+            <p className="font-red-hat text-[var(--slate-gray)] mb-8">This property listing may have been removed or is currently unavailable.</p>
             <Link
               to="/properties"
-              className="w-full bg-[#1C1B1A] text-white font-manrope font-bold py-4 rounded-xl hover:bg-black transition-all inline-block text-center"
+              className="w-full bg-[var(--gold-900)] text-white font-manrope font-bold py-4 rounded-xl hover:bg-black transition-all inline-block text-center"
             >
               Browse Other Properties
             </Link>
@@ -157,7 +157,7 @@ const PropertyDetailsPage: React.FC = () => {
       <div className="block sm:hidden px-4 py-6">
          <Link 
            to="/properties" 
-           className="flex items-center justify-start gap-1 text-[#5A5856] font-manrope font-bold text-xs uppercase tracking-widest border border-[#E6E0DA] py-4 px-5 rounded-xl active:bg-[#F8F6F6] transition-all bg-white shadow-sm w-fit"
+           className="flex items-center justify-start gap-1 text-[var(--slate-gray)] font-manrope font-bold text-xs uppercase tracking-widest border border-[#E6E0DA] py-4 px-5 rounded-xl active:bg-[#F8F6F6] transition-all bg-white shadow-sm w-fit"
          >
             <ChevronLeft className="w-4 h-4" />
             Back to Search
@@ -224,7 +224,7 @@ const PropertyDetailsPage: React.FC = () => {
       <div className="fixed bottom-0 left-0 right-0 z-[60] lg:hidden bg-white border-t border-[#E6E0DA] px-4 py-4 flex items-center justify-between gap-4 shadow-[0_-4px_10px_rgba(0,0,0,0.03)]">
          <a 
            href={`tel:${property.phone}`}
-           className="flex-1 flex items-center justify-center gap-2 border border-[#1C1B1A] text-[#1C1B1A] font-manrope font-extrabold text-sm uppercase tracking-widest py-4 rounded-xl active:bg-[#F8F6F6] transition-all"
+           className="flex-1 flex items-center justify-center gap-2 border border-[var(--charcoal-ink)] text-[var(--charcoal-ink)] font-manrope font-extrabold text-sm uppercase tracking-widest py-4 rounded-xl active:bg-[#F8F6F6] transition-all"
          >
             <Phone className="w-4 h-4" />
             Contact
@@ -233,7 +233,7 @@ const PropertyDetailsPage: React.FC = () => {
            onClick={() => {
               window.location.href = '/#consultation-section';
            }}
-           className="flex-1 flex items-center justify-center gap-2 bg-[#1C1B1A] text-white font-manrope font-extrabold text-sm uppercase tracking-widest py-4 rounded-xl shadow-lg active:scale-95 transition-all"
+           className="flex-1 flex items-center justify-center gap-2 bg-[var(--charcoal-ink)] text-white font-manrope font-extrabold text-sm uppercase tracking-widest py-4 rounded-xl shadow-lg active:scale-95 transition-all"
          >
             <Calendar className="w-4 h-4" />
             Book Visit

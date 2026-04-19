@@ -24,7 +24,7 @@ const ConsultationSection: React.FC<ConsultationSectionProps> = ({ defaultProper
 
   const handleBookingSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     setSubmitting(true);
     try {
       await appointmentsAPI.schedule({
@@ -54,15 +54,15 @@ const ConsultationSection: React.FC<ConsultationSectionProps> = ({ defaultProper
       {/* Left Side Images */}
       <div className="lg:w-1/2 relative bg-gray-100 min-h-[400px]">
         <div className="absolute inset-0">
-          <img 
-            src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_webp,q_80/v1776423229/Hero_Section.jpg" 
-            className="w-full h-1/2 object-cover opacity-80" 
-            alt="House top" 
+          <img
+            src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_webp,q_80/v1776423229/Hero_Section.jpg"
+            className="w-full h-1/2 object-cover opacity-80"
+            alt="House top"
           />
-          <img 
-            src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_webp,q_80/v1776423229/Happy_Homeowners_1.jpg" 
-            className="w-full h-1/2 object-cover" 
-            alt="House bottom" 
+          <img
+            src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_webp,q_80/v1776423229/Happy_Homeowners_1.jpg"
+            className="w-full h-1/2 object-cover"
+            alt="House bottom"
           />
         </div>
         <div className="absolute bottom-6 right-6 flex gap-4">
@@ -121,7 +121,7 @@ const ConsultationSection: React.FC<ConsultationSectionProps> = ({ defaultProper
           <button
             type="submit"
             disabled={submitting}
-            className="bg-white text-[#1C1B1A] font-manrope font-bold py-4 px-10 rounded-xl hover:bg-gray-100 transition-colors inline-block uppercase tracking-widest text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+            className="bg-[#C19B4B] text-white font-manrope font-bold py-4 px-10 rounded-xl hover:bg-gray-100 transition-colors inline-block uppercase tracking-widest text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {submitting ? 'Requesting...' : 'Request a Call'}
           </button>

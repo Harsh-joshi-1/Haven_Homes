@@ -25,7 +25,7 @@ const SocialFloatingDrawer: React.FC = () => {
   ];
 
   return (
-    <div className="fixed right-4 top-1/2 -translate-y-1/2 z-[9999] flex flex-col gap-4">
+    <div className="fixed right-2 top-1/2 -translate-y-1/2 z-[9999] flex flex-col gap-4">
       {socials.map((social, index) => (
         <motion.a
           key={social.name}
@@ -39,9 +39,9 @@ const SocialFloatingDrawer: React.FC = () => {
           className={`${social.color} w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all ${social.name === 'Facebook' ? 'p-0 overflow-hidden' : 'p-2.5'} border border-gray-100`}
           title={social.name}
         >
-          <img 
-            src={social.image} 
-            alt={social.name} 
+          <img
+            src={social.image}
+            alt={social.name}
             className={`w-full h-full ${social.name === 'Facebook' ? 'object-cover' : 'object-contain'}`}
           />
         </motion.a>

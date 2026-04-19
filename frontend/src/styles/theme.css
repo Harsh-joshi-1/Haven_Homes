@@ -2,13 +2,24 @@
 
 /* Haven Homes Luxury Design System */
 :root {
-  /* Luxury Color Palette */
+  /* Luxury Gold Palette */
+  --gold-50: #FFE169;
+  --gold-100: #FAD643;
+  --gold-200: #EDC531;
+  --gold-300: #DBB42C;
+  --gold-400: #C9A227;
+  --gold-500: #B69121;
+  --gold-600: #A47E1B;
+  --gold-700: #926C15;
+  --gold-800: #805B10;
+  --gold-900: #76520E;
+
   --canvas-cream: #FAF8F4;
   --pearl-white: #FFFFFF;
-  --terracotta-clay: #C5A059;
-  --terracotta-primary: #D4AF37; /* Figma uses this brighter version */
-  --charcoal-ink: #1C1B1A;
-  --slate-gray: #5A5856;
+  --terracotta-clay: var(--gold-400);
+  --terracotta-primary: var(--gold-100);
+  --charcoal-ink: var(--gold-900);
+  --slate-gray: var(--gold-700);
   --warm-linen: #F5F1E8;
   --warm-sand: #E6D5C3;
   

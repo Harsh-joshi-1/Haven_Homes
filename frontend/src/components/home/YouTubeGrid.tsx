@@ -70,7 +70,7 @@ const YouTubeGrid: React.FC = () => {
     <section className="youtube-grid-section">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title text-4xl sm:text-5xl font-bold mb-4 font-fraunces">Latest from Haven Homes</h2>
+          <h2 className="section-title text-[#C5A059] text-4xl sm:text-5xl font-bold mb-4 font-fraunces text-center">Latest from Haven Homes</h2>
           <p className="section-subtitle text-lg text-gray-600 mb-12 max-w-2xl mx-auto font-manrope">Stay updated with our newest property walkthroughs and real estate insights</p>
         </div>
 
