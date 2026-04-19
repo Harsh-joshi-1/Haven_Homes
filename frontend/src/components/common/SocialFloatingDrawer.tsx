@@ -25,7 +25,7 @@ const SocialFloatingDrawer: React.FC = () => {
   ];
 
   return (
-    <div className="fixed right-2 top-1/2 -translate-y-1/2 z-[9999] flex flex-col gap-4">
+    <div className="fixed right-2 top-1/2 -translate-y-1/2 mt-[-102px] z-[9999] flex flex-col gap-4">
       {socials.map((social, index) => (
         <motion.a
           key={social.name}
