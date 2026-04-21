@@ -13,61 +13,9 @@ const apiClient = axios.create({
   },
 });
 
-// ── Request interceptor: attach auth token ──────────────────
-apiClient.interceptors.request.use(
-  (config) => {
-    const token = localStorage.getItem('Haven Homes_token');
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
-    return config;
-  },
-  (error) => Promise.reject(error)
-);
-
-// ── Response interceptor: auto-logout on 401 ────────────────
-apiClient.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    if (error.response?.status === 401) {
-      localStorage.removeItem('Haven Homes_token');
-      // Optionally redirect to login
-      // window.location.href = '/signin';
-    }
-    return Promise.reject(error);
-  }
-);
-
 // ═══════════════════════════════════════════════════════════
 // API Endpoints — aligned with backend routes
 // ═══════════════════════════════════════════════════════════
-
-// User Authentication
-// Backend register expects { name, email, password }
-// We transform fullName → name here so the UI can keep using fullName
-export const userAPI = {
-  register: (data: { fullName: string; email: string; phone: string; password: string }) =>
-    apiClient.post('/users/register', {
-      name: data.fullName,
-      email: data.email,
-      password: data.password,
-    }),
-
-  login: (data: { email: string; password: string; rememberMe?: boolean }) =>
-    apiClient.post('/users/login', data),
-
-  forgotPassword: (email: string) =>
-    apiClient.post('/users/forgot', { email }),
-
-  resetPassword: (token: string, password: string) =>
-    apiClient.post(`/users/reset/${token}`, { password }),
-
-  verifyEmail: (token: string) =>
-    apiClient.get(`/users/verify/${token}`),
-
-  getProfile: () =>
-    apiClient.get('/users/me'),
-};
 
 // Properties (CRUD — admin-managed listings)
 export const propertiesAPI = {
@@ -78,26 +26,7 @@ export const propertiesAPI = {
     apiClient.get(`/products/single/${id}`),
 };
 
-// User-submitted property listings (require auth)
-export const userListingsAPI = {
-  create: (formData: FormData) =>
-    apiClient.post('/user/properties', formData, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-    }),
-
-  getMyListings: () =>
-    apiClient.get('/user/properties'),
-
-  update: (id: string, formData: FormData) =>
-    apiClient.put(`/user/properties/${id}`, formData, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-    }),
-
-  delete: (id: string) =>
-    apiClient.delete(`/user/properties/${id}`),
-};
-
-// Appointments (supports guest + auth bookings)
+// Appointments (supports guest bookings)
 export const appointmentsAPI = {
   schedule: (data: {
     propertyId: string;
@@ -109,16 +38,9 @@ export const appointmentsAPI = {
     message?: string;
   }) =>
     apiClient.post('/appointments/schedule', data),
-
-  getByUser: () =>
-    apiClient.get('/appointments/user'),
-
-  cancel: (id: string, reason?: string) =>
-    apiClient.put(`/appointments/cancel/${id}`, { cancelReason: reason }),
 };
 
 // AI-Powered Property Search
-// Backend transforms the request via middleware at POST /api/ai/search
 export const aiAPI = {
   search: (data: {
     city?: string;
@@ -183,4 +105,3 @@ export const youtubeAPI = {
 };
 
 export default apiClient;
-
