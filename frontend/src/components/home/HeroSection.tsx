@@ -19,7 +19,7 @@ const HeroSection: React.FC = () => {
       {/* Background Image Container */}
       <div className="absolute inset-0 w-full h-full">
         <img
-          src="https://ik.imagekit.io/kceia4cyw/havenhome_assets/frontend_images/Hero_Section_1NgfH2-h68.jpg?tr=f-auto"
+          src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_webp,q_80/v1776423229/Hero_Section.jpg"
           alt="Luxury Coastal Retreat"
           className="w-full h-full object-cover"
         />

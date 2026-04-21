@@ -86,7 +86,7 @@ const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed }) => {
         <div className="h-16 flex items-center justify-between px-6 border-b border-white/10 flex-shrink-0">
           {!isCollapsed ? (
             <Link to="/dashboard" className="flex items-center gap-3 group">
-              <img src="https://ik.imagekit.io/kceia4cyw/havenhome_assets/frontend_images/logo_KpUMgcQ9eP.png?tr=f-auto" alt="Haven Homes" className="h-9 w-auto filter brightness-0 invert" />
+              <img src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_auto,q_auto/v1776492125/logo-Photoroom.png" alt="Haven Homes" className="h-9 w-auto filter brightness-0 invert" />
               <div>
                 <span className="text-lg font-bold font-fraunces text-[#FAF8F4] tracking-tight">
                   Haven Homes
@@ -98,7 +98,7 @@ const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed }) => {
             </Link>
           ) : (
             <Link to="/dashboard" className="flex items-center justify-center w-full">
-              <img src="https://ik.imagekit.io/kceia4cyw/havenhome_assets/frontend_images/logo_KpUMgcQ9eP.png?tr=f-auto" alt="Haven Homes" className="h-9 w-auto filter brightness-0 invert" />
+              <img src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_auto,q_auto/v1776492125/logo-Photoroom.png" alt="Haven Homes" className="h-9 w-auto filter brightness-0 invert" />
             </Link>
           )}
         </div>

@@ -71,7 +71,7 @@ const Login = () => {
         {/* Logo */}
         <div className="relative z-10">
           <div className="flex items-center gap-3 mb-16">
-            <img src="https://ik.imagekit.io/kceia4cyw/havenhome_assets/frontend_images/logo_KpUMgcQ9eP.png?tr=f-auto" alt="Haven Homes" className="h-10 w-auto filter brightness-0 invert" />
+            <img src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_auto,q_auto/v1776492125/logo-Photoroom.png" alt="Haven Homes" className="h-10 w-auto filter brightness-0 invert" />
             <div>
               <div className="text-xl font-bold font-fraunces text-[#FAF8F4]">Haven Homes</div>
               <div className="text-xs text-[#9CA3AF] font-bold font-red-hat uppercase tracking-widest">Admin Panel</div>
@@ -118,7 +118,7 @@ const Login = () => {
         <div className="w-full max-w-md">
           {/* Mobile Logo */}
           <div className="flex items-center gap-3 mb-10 lg:hidden">
-            <img src="https://ik.imagekit.io/kceia4cyw/havenhome_assets/frontend_images/logo_KpUMgcQ9eP.png?tr=f-auto" alt="Haven Homes Admin" className="h-9 w-auto" />
+            <img src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_auto,q_auto/v1776492125/logo-Photoroom.png" alt="Haven Homes Admin" className="h-9 w-auto" />
             <div className="text-lg font-bold font-fraunces text-[#1C1B1A]">Haven Homes Admin</div>
           </div>
 

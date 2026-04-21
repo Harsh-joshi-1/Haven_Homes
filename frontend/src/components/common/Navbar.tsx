@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
           className="flex items-center gap-3 h-full py-0 lg:static absolute left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0"
         >
           <img
-            src="https://ik.imagekit.io/kceia4cyw/havenhome_assets/frontend_images/logo_KpUMgcQ9eP.png?tr=f-auto"
+            src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_auto,q_auto/v1776492125/logo-Photoroom.png"
             alt="Haven Homes Logo"
             className="h-full w-auto object-contain py-1"
           />
@@ -83,7 +83,7 @@ const Navbar: React.FC = () => {
         {/* Rightmost Decorative Image */}
         <div className="flex items-center h-full py-0.5">
           <img
-            src="https://ik.imagekit.io/kceia4cyw/havenhome_assets/frontend_assets/fb473a2ea94af6c95625cf0b07e50c9630b13400_b6VsmTcAU.png?tr=f-auto"
+            src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_auto,q_auto/v1776584992/Gemini_Generated_Image_6q1o176q1o176q1o-Photoroom.png"
             alt="Decorative Element"
             className="h-full w-auto object-contain"
           />
