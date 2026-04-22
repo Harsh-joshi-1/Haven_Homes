@@ -1,6 +1,6 @@
 import express from 'express';
-import { login, register, forgotpassword, adminlogin, resetpassword, getname, verifyEmail } from '../controller/userController.js';
-import authMiddleware from '../middleware/authMiddleware.js';
+import { login, register, forgotpassword, adminlogin, resetpassword, getname, verifyEmail, changeAdminPassword, changeUserPassword } from '../controller/userController.js';
+import authMiddleware, { adminProtect } from '../middleware/authMiddleware.js';
 import { registrationLimiter, loginLimiter, passwordResetLimiter } from '../middleware/rateLimitMiddleware.js';
 
 
@@ -11,7 +11,9 @@ userrouter.post('/register', registrationLimiter, register);
 userrouter.get('/verify/:token', verifyEmail);  // Email verification endpoint
 userrouter.post('/forgot', passwordResetLimiter, forgotpassword);
 userrouter.post('/reset/:token', resetpassword);
+userrouter.post('/change-password', authMiddleware, changeUserPassword);
 userrouter.post('/admin', loginLimiter, adminlogin);
+userrouter.post('/admin/change-password', adminProtect, changeAdminPassword);
 userrouter.get('/me', authMiddleware, getname);
 
 export default userrouter;

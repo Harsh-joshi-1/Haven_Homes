@@ -67,6 +67,9 @@ export const userAPI = {
 
   getProfile: () =>
     apiClient.get('/users/me'),
+
+  changePassword: (data: { oldPassword: string; newPassword: string }) =>
+    apiClient.post('/users/change-password', data),
 };
 
 // Properties (CRUD — admin-managed listings)

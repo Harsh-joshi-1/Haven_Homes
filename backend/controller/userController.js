@@ -235,8 +235,16 @@ const adminlogin = async (req, res) => {
     admin.lastLogin = new Date();
     await admin.save();
 
-    const token = jwt.sign({ email: admin.email }, process.env.JWT_SECRET, { expiresIn: '2h' });
-    return res.json({ token, success: true });
+    const token = jwt.sign({ email: admin.email, id: admin._id }, process.env.JWT_SECRET, { expiresIn: '2h' });
+    return res.json({ 
+      token, 
+      success: true,
+      user: {
+        email: admin.email,
+        role: admin.role,
+        id: admin._id
+      }
+    });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ message: "Server error", success: false });
@@ -316,4 +324,54 @@ const getname = async (req, res) => {
 
 
 
-export { login, register, forgotpassword, resetpassword, adminlogin, logout, getname, verifyEmail };
+const changeAdminPassword = async (req, res) => {
+  try {
+    const { oldPassword, newPassword } = req.body;
+    const adminEmail = req.admin.email;
+
+    const admin = await Admin.findOne({ email: adminEmail });
+    if (!admin) {
+      return res.status(404).json({ success: false, message: "Admin not found" });
+    }
+
+    const isMatch = await bcrypt.compare(oldPassword, admin.password);
+    if (!isMatch) {
+      return res.status(400).json({ success: false, message: "Incorrect old password" });
+    }
+
+    admin.password = newPassword; // Will be hashed by pre-save hook
+    await admin.save();
+
+    res.json({ success: true, message: "Password changed successfully" });
+  } catch (error) {
+    console.error("Change password error:", error);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+};
+
+const changeUserPassword = async (req, res) => {
+  try {
+    const { oldPassword, newPassword } = req.body;
+    const userId = req.user.id;
+
+    const user = await userModel.findById(userId);
+    if (!user) {
+      return res.status(404).json({ success: false, message: "User not found" });
+    }
+
+    const isMatch = await bcrypt.compare(oldPassword, user.password);
+    if (!isMatch) {
+      return res.status(400).json({ success: false, message: "Incorrect old password" });
+    }
+
+    user.password = await bcrypt.hash(newPassword, 12);
+    await user.save();
+
+    res.json({ success: true, message: "Password changed successfully" });
+  } catch (error) {
+    console.error("Change password error:", error);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+};
+
+export { login, register, forgotpassword, resetpassword, adminlogin, logout, getname, verifyEmail, changeAdminPassword, changeUserPassword };

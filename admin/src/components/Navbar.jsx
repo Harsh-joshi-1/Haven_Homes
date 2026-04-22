@@ -17,8 +17,10 @@ import {
   ClipboardList,
   Users,
   FileText,
+  KeyRound,
 } from 'lucide-react';
 import { cn } from '../lib/utils';
+import ChangePasswordModal from './ChangePasswordModal';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -26,6 +28,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isMoreOpen, setIsMoreOpen] = useState(false);
+  const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -216,6 +219,16 @@ const Navbar = () => {
                       <div className="text-sm font-semibold text-[#FAF8F4]">Admin Panel</div>
                       <div className="text-xs text-[#9CA3AF] mt-0.5">Manage your properties</div>
                     </div>
+                    <button 
+                      onClick={() => {
+                        setIsPasswordModalOpen(true);
+                        setIsProfileOpen(false);
+                      }}
+                      className="w-full text-left px-4 py-2.5 text-sm text-[#9CA3AF] hover:text-[#FAF8F4] hover:bg-white/10 flex items-center gap-2.5 transition-colors"
+                    >
+                      <KeyRound className="h-4 w-4" />
+                      Change Password
+                    </button>
                     <button className="w-full text-left px-4 py-2.5 text-sm text-[#9CA3AF] hover:text-[#FAF8F4] hover:bg-white/10 flex items-center gap-2.5 transition-colors">
                       <Settings className="h-4 w-4" />
                       Settings
@@ -328,6 +341,11 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <ChangePasswordModal 
+        isOpen={isPasswordModalOpen} 
+        onClose={() => setIsPasswordModalOpen(false)} 
+      />
     </motion.header>
   );
 };

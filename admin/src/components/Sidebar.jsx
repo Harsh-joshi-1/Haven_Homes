@@ -16,12 +16,15 @@ import {
   ChevronRight,
   Building2,
   Menu,
+  KeyRound,
 } from 'lucide-react';
 import { cn } from '../lib/utils';
+import ChangePasswordModal from './ChangePasswordModal';
 
 const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed }) => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
 
   useEffect(() => {
     localStorage.setItem('sidebarCollapsed', isCollapsed.toString());
@@ -200,6 +203,25 @@ const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed }) => {
             </div>
           )}
 
+          {/* Change Password */}
+          {!isCollapsed ? (
+            <button
+              onClick={() => setIsPasswordModalOpen(true)}
+              className="w-full flex items-center gap-3 px-3 py-2.5 mb-1 text-[#9CA3AF] hover:text-[#FAF8F4] hover:bg-white/10 rounded-lg transition-all duration-200 text-sm font-medium"
+            >
+              <KeyRound className="h-5 w-5 text-[#C5A059]" />
+              <span className="flex-1 text-left">Change Password</span>
+            </button>
+          ) : (
+            <button
+              onClick={() => setIsPasswordModalOpen(true)}
+              className="w-full flex items-center justify-center px-3 py-2.5 mb-1 text-[#9CA3AF] hover:text-[#FAF8F4] hover:bg-white/10 rounded-lg transition-all duration-200"
+              title="Change Password"
+            >
+              <KeyRound className="h-5 w-5 text-[#C5A059]" />
+            </button>
+          )}
+
           {/* Logout */}
           {!isCollapsed ? (
             <button
@@ -246,6 +268,10 @@ const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed }) => {
           <Menu className="h-5 w-5" />
         )}
       </button>
+      <ChangePasswordModal 
+        isOpen={isPasswordModalOpen} 
+        onClose={() => setIsPasswordModalOpen(false)} 
+      />
     </>
   );
 };
