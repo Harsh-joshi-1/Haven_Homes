@@ -89,6 +89,7 @@ app.use(requestIdMiddleware);
 app.use(trackAPIStats);
 
 // NoSQL injection prevention
+/*
 app.use(mongoSanitize({
   replaceWith: '_',
   onSanitize: ({ req, key }) => {
@@ -99,6 +100,7 @@ app.use(mongoSanitize({
     });
   }
 }));
+*/
 
 
 // CORS Configuration
@@ -203,7 +205,7 @@ app.use((err, req, res, next) => {
     message: err.message || 'Internal server error',
     statusCode,
     requestId: req.requestId,
-    ...(process.env.NODE_ENV === 'development' && { stack: err.stack }),
+    stack: err.stack,
     timestamp: new Date().toISOString()
   });
 });
