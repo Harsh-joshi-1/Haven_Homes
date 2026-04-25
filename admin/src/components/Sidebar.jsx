@@ -16,11 +16,8 @@ import {
   ChevronRight,
   Building2,
   Menu,
-<<<<<<< HEAD
   KeyRound,
-=======
-  Settings as SettingsIcon,
->>>>>>> cdcc8922699eb172cb6edc752368d69c74a7e8a0
+
 } from 'lucide-react';
 import { cn } from '../lib/utils';
 import ChangePasswordModal from './ChangePasswordModal';
@@ -92,11 +89,8 @@ const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed }) => {
         <div className="h-16 flex items-center justify-between px-6 border-b border-white/10 flex-shrink-0">
           {!isCollapsed ? (
             <Link to="/dashboard" className="flex items-center gap-3 group">
-<<<<<<< HEAD
               <img src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_auto,q_auto/v1776492125/logo-Photoroom.png" alt="Haven Homes" className="h-9 w-auto" />
-=======
-              <img src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_auto,q_auto/v1776492125/logo-Photoroom.png" alt="Haven Homes" className="h-9 w-auto filter brightness-0 invert" />
->>>>>>> cdcc8922699eb172cb6edc752368d69c74a7e8a0
+
               <div>
                 <span className="text-lg font-bold font-fraunces text-[#C5A059] tracking-tight">
                   Haven Homes
@@ -108,11 +102,8 @@ const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed }) => {
             </Link>
           ) : (
             <Link to="/dashboard" className="flex items-center justify-center w-full">
-<<<<<<< HEAD
               <img src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_auto,q_auto/v1776492125/logo-Photoroom.png" alt="Haven Homes" className="h-9 w-auto" />
-=======
-              <img src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_auto,q_auto/v1776492125/logo-Photoroom.png" alt="Haven Homes" className="h-9 w-auto filter brightness-0 invert" />
->>>>>>> cdcc8922699eb172cb6edc752368d69c74a7e8a0
+
             </Link>
           )}
         </div>
