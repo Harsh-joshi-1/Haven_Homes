@@ -6,6 +6,11 @@ const appointmentSchema = new mongoose.Schema({
     ref: 'Property',
     required: true
   },
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: false
+  },
   guestInfo: {
     name: { type: String },
     email: { type: String },

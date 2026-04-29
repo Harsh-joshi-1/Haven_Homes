@@ -69,6 +69,7 @@ const addproperty = async (req, res) => {
 
         // Save the product to the database
         await product.save();
+        clearCache();
 
         res.json({ message: "Product added successfully", success: true });
     } catch (error) {
@@ -100,6 +101,10 @@ function getCache(key) {
     return null;
   }
   return item.data;
+}
+
+export function clearCache() {
+  lruCache.clear();
 }
 // --------------------------
 
@@ -268,6 +273,7 @@ const removeproperty = async (req, res) => {
         }
 
         await Property.findByIdAndDelete(req.body.id);
+        clearCache();
         return res.json({ message: "Property removed successfully", success: true });
     } catch (error) {
         console.log("Error removing product: ", error);
@@ -330,6 +336,7 @@ const updateproperty = async (req, res) => {
             
             console.log("Saving property. mapEmbedUrl:", property.mapEmbedUrl);
             await property.save();
+            clearCache();
             return res.json({ message: "Property updated successfully", success: true });
         }
 
@@ -409,6 +416,7 @@ const updateproperty = async (req, res) => {
 
         console.log("Saving property (with images). mapEmbedUrl:", property.mapEmbedUrl);
         await property.save();
+        clearCache();
         res.json({ message: "Property updated successfully", success: true });
     } catch (error) {
         console.log("Error updating product: ", error);

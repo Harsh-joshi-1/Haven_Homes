@@ -12,6 +12,7 @@ import createCsvWriter from 'csv-writer';
 import fs from 'fs';
 import mongoose from 'mongoose';
 import { deleteImagesFromImageKit } from '../utils/imageKitCleanup.js';
+import { clearCache } from './productController.js';
 
 const formatRecentProperties = (properties) => {
   return properties.map((property) => ({
@@ -294,6 +295,7 @@ export const approveListing = async (req, res) => {
       }
     }
 
+    clearCache();
     res.json({ success: true, message: "Listing approved", property });
   } catch (error) {
     console.error("Error approving listing:", error);
@@ -333,6 +335,7 @@ export const rejectListing = async (req, res) => {
       }
     }
 
+    clearCache();
     res.json({ success: true, message: "Listing rejected", property });
   } catch (error) {
     console.error("Error rejecting listing:", error);
@@ -986,6 +989,8 @@ export const bulkApproveProperties = async (req, res) => {
       console.error("Bulk approval emails failed (non-fatal):", mailErr.message);
     }
 
+    clearCache();
+
     res.json({
       success: true,
       message: `${result.modifiedCount} property(ies) approved successfully`,
@@ -1075,6 +1080,8 @@ export const bulkRejectProperties = async (req, res) => {
     } catch (mailErr) {
       console.error("Bulk rejection emails failed (non-fatal):", mailErr.message);
     }
+
+    clearCache();
 
     res.json({
       success: true,
