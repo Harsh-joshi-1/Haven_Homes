@@ -242,21 +242,31 @@ export const scheduleViewing = async (req, res) => {
   try {
     const { propertyId, date, time, notes, name, email, phone, message } = req.body;
 
-    const guestEmail = email;
-    const guestName = name;
+    const isGeneralConsultation = propertyId === 'general' || !propertyId;
+    let property = null;
 
-    // Check if property exists
-    const property = await Property.findById(propertyId);
-    if (!property) {
-      return res.status(404).json({
-        success: false,
-        message: 'Property not found'
-      });
+    if (!isGeneralConsultation) {
+      // Check if property exists only for specific viewings
+      try {
+        property = await Property.findById(propertyId);
+        if (!property) {
+          return res.status(404).json({
+            success: false,
+            message: 'Property not found'
+          });
+        }
+      } catch (error) {
+        // Handle invalid ObjectId format
+        return res.status(400).json({
+          success: false,
+          message: 'Invalid property ID format'
+        });
+      }
     }
 
     // Build appointment data — store guest info
     const appointmentData = {
-      propertyId,
+      ...(isGeneralConsultation ? {} : { propertyId }),
       ...(date && { date }),
       ...(time && { time }),
       notes: notes || message || '',

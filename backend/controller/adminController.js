@@ -52,6 +52,7 @@ export const getAdminStats = async (req, res) => {
       getViewsData().catch(() => ({ totalViews: 0, labels: [], datasets: [] })),
     ]);
 
+
     res.json({
       success: true,
       stats: {
@@ -1570,6 +1571,7 @@ export const getEnhancedOverview = async (req, res) => {
       // Get views data for charts
       getViewsData().catch(() => ({ totalViews: 0, labels: [], datasets: [] }))
     ]);
+
 
     res.json({
       success: true,
