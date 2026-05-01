@@ -264,6 +264,9 @@ export const scheduleViewing = async (req, res) => {
       }
     }
 
+    const guestEmail = email;
+    const guestName = name;
+
     // Build appointment data — store guest info
     const appointmentData = {
       ...(isGeneralConsultation ? {} : { propertyId }),
@@ -277,7 +280,9 @@ export const scheduleViewing = async (req, res) => {
     const appointment = new Appointment(appointmentData);
     await appointment.save();
 
-    await appointment.populate('propertyId');
+    if (!isGeneralConsultation) {
+      await appointment.populate('propertyId');
+    }
 
     // Send confirmation email
     const recipientEmail = guestEmail;
@@ -308,10 +313,14 @@ export const scheduleViewing = async (req, res) => {
       appointment
     });
   } catch (error) {
-    console.error('Error scheduling viewing:', error);
+    console.error('CRITICAL: Error scheduling viewing:', {
+      message: error.message,
+      stack: error.stack,
+      body: req.body
+    });
     res.status(500).json({
       success: false,
-      message: 'Error scheduling viewing'
+      message: 'Error scheduling viewing: ' + error.message
     });
   }
 };

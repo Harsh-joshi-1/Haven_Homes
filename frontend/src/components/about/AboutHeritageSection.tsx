@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import OptimizedImage from '../common/OptimizedImage';
 
 
 const AboutHeritageSection: React.FC = () => {
@@ -11,10 +12,11 @@ const AboutHeritageSection: React.FC = () => {
           <div className="relative">
             <div className="border border-[#E5E7EB] rounded-2xl p-3">
               <div className="relative h-[400px] sm:h-[600px] lg:h-[700px] rounded-xl overflow-hidden">
-                <img
-                  src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_webp,q_auto/v1776496833/about_us1.jpg"
+                <OptimizedImage
+                  src="https://res.cloudinary.com/dp4xt0bve/image/upload/v1776496833/about_us1.jpg"
                   alt="Architectural detail"
                   className="w-full h-full object-cover"
+                  type="normal"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/20 to-transparent" />
               </div>

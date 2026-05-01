@@ -1,14 +1,8 @@
-/* Google Fonts for Haven Homes Aesthetic Font System */
+/* Google Fonts and Icons are now loaded via index.html for better performance */
 
-/* Playfair Display - Classic Editorial Serif for Headers */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-/* DM Sans - Modern Minimalist Sans-serif for Body and UI */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-
-/* Space Grotesk - Aesthetic Sans for Numbers and Specific Labels */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-
-/* Material Icons for icons */
-@import url('https://fonts.googleapis.com/css2?family=Material+Icons&display=swap');
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+/* Standard Haven Homes Font Fallbacks */
+:root {
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'DM Sans', sans-serif;
+  --font-accent: 'Space Grotesk', sans-serif;
+}

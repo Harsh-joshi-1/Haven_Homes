@@ -1,14 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import { useLocation } from 'react-router-dom';
 import Navbar from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
 import { useSEO } from '../hooks/useSEO';
 import HeroSection from '../components/home/HeroSection';
 import CuratedListingsSection from '../components/home/CuratedListingsSection';
-import YouTubeGrid from '../components/home/YouTubeGrid';
 import WhyChooseSection from '../components/about/WhyChooseSection';
 import ConsultationSection from '../components/home/ConsultationSection';
-import FaqSection from '../components/home/FaqSection';
+
+const YouTubeGrid = lazy(() => import('../components/home/YouTubeGrid'));
+const FaqSection = lazy(() => import('../components/home/FaqSection'));
 
 const HomePage: React.FC = () => {
   const location = useLocation();
@@ -44,8 +45,10 @@ const HomePage: React.FC = () => {
 
       <ConsultationSection />
       <WhyChooseSection />
-      <YouTubeGrid />
-      <FaqSection />
+      <Suspense fallback={<div className="h-40 flex items-center justify-center"><div className="w-8 h-8 border-2 border-[#C5A059] border-t-transparent rounded-full animate-spin"></div></div>}>
+        <YouTubeGrid />
+        <FaqSection />
+      </Suspense>
 
       {/* Footer */}
       <Footer />

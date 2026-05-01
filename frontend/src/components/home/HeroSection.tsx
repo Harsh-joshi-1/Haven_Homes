@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Search, MapPin } from 'lucide-react';
+import OptimizedImage from '../common/OptimizedImage';
 
 const HeroSection: React.FC = () => {
   const navigate = useNavigate();
@@ -18,10 +19,12 @@ const HeroSection: React.FC = () => {
     <section className="relative w-full h-[75vh] sm:h-[85vh] lg:h-[90vh] overflow-hidden bg-white">
       {/* Background Image Container */}
       <div className="absolute inset-0 w-full h-full">
-        <img
-          src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_webp,q_80/v1776423229/Hero_Section.jpg"
+        <OptimizedImage
+          src="https://res.cloudinary.com/dp4xt0bve/image/upload/v1776423229/Hero_Section.jpg"
           alt="Luxury Coastal Retreat"
           className="w-full h-full object-cover"
+          priority={true}
+          type="hero"
         />
         {/* Subtle overlay to enhance text readability while maintaining "airy" feel */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/35" />

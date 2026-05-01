@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronRight, Home, Building, Info, MessageCircle, Phone } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,10 +45,11 @@ const Navbar: React.FC = () => {
           to="/"
           className="flex items-center gap-3 h-full py-0 lg:static absolute left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0"
         >
-          <img
-            src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_auto,q_auto/v1776492125/logo-Photoroom.png"
+          <OptimizedImage
+            src="https://res.cloudinary.com/dp4xt0bve/image/upload/v1776492125/logo-Photoroom.png"
             alt="Haven Homes Logo"
             className="h-full w-auto object-contain py-1"
+            type="thumbnail"
           />
           <span className="font-fraunces font-bold text-xl sm:text-2xl text-[#C5A059] tracking-tight hidden lg:block">Haven Homes</span>
         </Link>
@@ -83,10 +85,11 @@ const Navbar: React.FC = () => {
 
         {/* Rightmost Decorative Image */}
         <div className="flex items-center h-full py-0.5">
-          <img
-            src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_auto,q_auto/v1776584992/Gemini_Generated_Image_6q1o176q1o176q1o-Photoroom.png"
+          <OptimizedImage
+            src="https://res.cloudinary.com/dp4xt0bve/image/upload/v1776584992/Gemini_Generated_Image_6q1o176q1o176q1o-Photoroom.png"
             alt="Decorative Element"
             className="h-full w-auto object-contain"
+            type="thumbnail"
           />
         </div>
       </div>

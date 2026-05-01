@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { appointmentsAPI } from '../../services/api';
 import { toast } from 'sonner';
+import OptimizedImage from '../common/OptimizedImage';
 
 interface ConsultationSectionProps {
   defaultPropertyId?: string;
@@ -54,15 +55,17 @@ const ConsultationSection: React.FC<ConsultationSectionProps> = ({ defaultProper
       {/* Left Side Images */}
       <div className="lg:w-1/2 relative bg-gray-100 min-h-[400px]">
         <div className="absolute inset-0">
-          <img
-            src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_webp,q_80/v1776423229/Hero_Section.jpg"
+          <OptimizedImage
+            src="https://res.cloudinary.com/dp4xt0bve/image/upload/v1776423229/Hero_Section.jpg"
             className="w-full h-1/2 object-cover opacity-80"
             alt="House top"
+            type="normal"
           />
-          <img
-            src="https://res.cloudinary.com/dp4xt0bve/image/upload/f_webp,q_80/v1776423229/Happy_Homeowners_1.jpg"
+          <OptimizedImage
+            src="https://res.cloudinary.com/dp4xt0bve/image/upload/v1776423229/Happy_Homeowners_1.jpg"
             className="w-full h-1/2 object-cover"
             alt="House bottom"
+            type="normal"
           />
         </div>
         <div className="absolute bottom-6 right-6 flex gap-4">
