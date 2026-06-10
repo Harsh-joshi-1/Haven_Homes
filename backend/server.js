@@ -88,6 +88,13 @@ app.use(requestIdMiddleware);
 
 app.use(trackAPIStats);
 
+app.use((req, res, next) => {
+  Object.defineProperty(req, 'query', {
+    value: { ...req.query },
+    writable: true,
+  });
+  next();
+});
 // NoSQL injection prevention
 /*
 app.use(mongoSanitize({
@@ -282,7 +289,7 @@ app.get('/', (req, res) => {
 });
 
 // 404 handler - must be after all other routes
-app.use((req, res) => {
+app.all(/(.*)/, (req, res) => {
   res.status(404).json({
     success: false,
     message: `Route ${req.originalUrl} not found`,
